@@ -6,8 +6,8 @@ const Todo = () => {
     return (
         <>
             <form>
-                <input />
-                <button>Add new task</button>
+                <input onChange={handleInputChange} placeholder="Type a new task here" type="text" value={task}/>
+                <button type="submit">Add new task</button>
             </form>
             <table>
                 <thead>
