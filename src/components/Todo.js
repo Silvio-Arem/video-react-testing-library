@@ -6,18 +6,20 @@ const Todo = () => {
     // Criando uma função para o recebimento do campo do form
     const handleInputChange = event => updateTask(event.target.value)
 
-    const handleFormSubmit = event =>{
-        if(task.trim())
+    const handleFormSubmit = event => {
         event.preventDefault()
-        updateTasks([...tasks, task])
-        updateTask('')
+        if (task.trim()) {
+            updateTasks([...tasks, task])
+            updateTask('')
+        }
+
     }
 
     // Criando um retorno com campos de formulário
     return (
         <>
             <form onSubmit={handleFormSubmit}>
-                <input onChange={handleInputChange} placeholder="Type a new task here" type="text" value={task}/>
+                <input onChange={handleInputChange} placeholder="Type a new task here" type="text" value={task} />
                 <button type="submit">Add new task</button>
             </form>
             <table>
@@ -27,7 +29,7 @@ const Todo = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {tasks.map((t,index)=>(
+                    {tasks.map((t, index) => (
                         <tr key={index}>
                             <td>{t}</td>
                         </tr>
