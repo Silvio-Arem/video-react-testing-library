@@ -2,6 +2,9 @@ import React, { useState } from "react";
 const Todo = () => {
     const [task, updateTask] = useState('')
 
+    // Criando uma função para o recebimento do campo do form
+    const handleInputChange = event => updateTask(event.target.value)
+
     // Criando um retorno com campos de formulário
     return (
         <>
