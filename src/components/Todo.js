@@ -7,6 +7,7 @@ const Todo = () => {
     const handleInputChange = event => updateTask(event.target.value)
 
     const handleFormSubmit = event =>{
+        if(task.trim())
         event.preventDefault()
         updateTasks([...tasks, task])
         updateTask('')
@@ -25,7 +26,13 @@ const Todo = () => {
                         <th>Task</th>
                     </tr>
                 </thead>
-
+                <tbody>
+                    {tasks.map((t,index)=>(
+                        <tr key={index}>
+                            <td>{t}</td>
+                        </tr>
+                    ))}
+                </tbody>
             </table>
         </>
     )
